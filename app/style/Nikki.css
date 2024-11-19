@@ -1,0 +1,14 @@
+.mantine-Select-input {
+  color: var(--mantine-color-pink-text);
+  background-color: var(--mantine-color-pink-light);
+}
+
+.mantine-NumberInput-input {
+  color: var(--mantine-color-pink-text);
+  background-color: var(--mantine-color-pink-light);
+}
+
+.mantine-DateInput-input {
+  color: var(--mantine-color-pink-text);
+  background-color: var(--mantine-color-pink-light);
+}

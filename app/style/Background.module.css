@@ -1,0 +1,6 @@
+.background {
+    background-image: radial-gradient(var(--dot-color) 4px, transparent 4px), radial-gradient(var(--dot-color) 4px, transparent 4px);
+    background-size: 64px 64px;
+    background-position: 0 0, 32px 32px;
+    background-color: #ffffff;
+  }
