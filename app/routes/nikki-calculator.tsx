@@ -39,7 +39,7 @@ const nikkiCalculator = () => {
   const [weeklyNail, setWeeklyNail] = useState(false);
   const [dailyShare, setDailyShare] = useState(false);
   const [dailyMission, setDailyMission] = useState(false);
-  const [dailCheckIn, setDailCheckIn] = useState(false);
+  const [dailSignIn, setDailSignIn] = useState(false);
 
   const dailyFormula = (days: number, point: number) => days * point;
   const weeklyFormula = (weeks: number, point: number) => weeks * point;
@@ -223,8 +223,8 @@ const nikkiCalculator = () => {
       />
 
       <Switch
-        checked={dailCheckIn}
-        onChange={(event) => setDailCheckIn(event.currentTarget.checked)}
+        checked={dailSignIn}
+        onChange={(event) => setDailSignIn(event.currentTarget.checked)}
         mt="md"
         color="pink"
         label="每日簽到"
@@ -244,30 +244,37 @@ const nikkiCalculator = () => {
         </Button>
       </Group>
 
-      <Divider my="md" />
 
       {result > 0 && (
-        <Blockquote color="pink" iconSize={35} icon={<GiCutDiamond />} mt="xl">
-          <Grid gutter={0}>
-            <Grid.Col span={2}>
-              <Text c="dimmed">日期:</Text>
-            </Grid.Col>
-            <Grid.Col span={10}>
-              <Text c="pink" fw={500}>
-                {dayjs(startDate).format("YYYY/MM/DD")} -{" "}
-                {dayjs(endDate).format("YYYY/MM/DD")}
-              </Text>
-            </Grid.Col>
-            <Grid.Col span={2}>
-              <Text c="dimmed">預期鑽石收益:</Text>
-            </Grid.Col>
-            <Grid.Col span={10}>
-              <Text c="pink" fw={500}>
-                {result}
-              </Text>
-            </Grid.Col>
-          </Grid>
-        </Blockquote>
+        <>
+          <Divider my="md" />
+          <Blockquote
+            color="pink"
+            iconSize={35}
+            icon={<GiCutDiamond />}
+            mt="xl"
+          >
+            <Grid gutter={0}>
+              <Grid.Col span={2}>
+                <Text c="dimmed">日期:</Text>
+              </Grid.Col>
+              <Grid.Col span={10}>
+                <Text c="pink" fw={500}>
+                  {dayjs(startDate).format("YYYY/MM/DD")} -
+                  {dayjs(endDate).format("YYYY/MM/DD")}
+                </Text>
+              </Grid.Col>
+              <Grid.Col span={2}>
+                <Text c="dimmed">預期鑽石收益:</Text>
+              </Grid.Col>
+              <Grid.Col span={10}>
+                <Text c="pink" fw={500}>
+                  {result}
+                </Text>
+              </Grid.Col>
+            </Grid>
+          </Blockquote>
+        </>
       )}
     </form>
   );
