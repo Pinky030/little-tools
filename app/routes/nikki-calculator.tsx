@@ -44,7 +44,7 @@ const nikkiCalculator = () => {
   const dailyFormula = (days: number, point: number) => days * point;
   const weeklyFormula = (weeks: number, point: number) => weeks * point;
 
-  const calculateCheckInPoints = (dates: number, isMember: boolean) => {
+  const calculateSignInPoints = (dates: number, isMember: boolean) => {
     const fullCycles = Math.floor(dates / 8);
     const remainingDays = dates % 8;
 
@@ -78,7 +78,7 @@ const nikkiCalculator = () => {
     const memeberAmount = dailyFormula(totalDate, member);
     const shareAmount = dailyShare ? dailyFormula(totalDate, DAILY_SHARE) : 0;
     const giftAmount = dailyFormula(totalDate, gift);
-    const checkInPointAmount = calculateCheckInPoints(
+    const checkInPointAmount = calculateSignInPoints(
       totalDate,
       member === 0 ? false : true
     );
