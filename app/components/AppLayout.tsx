@@ -5,15 +5,15 @@ import styles from "../style/Background.module.css";
 import { useLocation } from "@remix-run/react";
 
 const getColor = (pathname: string) => {
-  if(pathname.includes("nikki")) return "#fcedf2e6"
-  if(pathname.includes("fgo")) return "#d3f3ff"
-}
+  if (pathname === "/") return "#fadfa18a";
+  if (pathname.includes("nikki")) return "#fcedf2e6";
+  if (pathname.includes("fgo")) return "#d3f3ff";
+};
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   // const [opened, { toggle }] = useDisclosure();
   const { pathname } = useLocation();
 
-  
   return (
     <AppShell
       navbar={{
