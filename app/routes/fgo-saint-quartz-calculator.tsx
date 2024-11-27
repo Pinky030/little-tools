@@ -8,6 +8,7 @@ import {
   Blockquote,
   Grid,
   Divider,
+  NumberInput,
 } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
 import dayjs from "dayjs";
@@ -21,6 +22,7 @@ const SIGNIN_REWARD = 30;
 const saintQuartzCalculator = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+  const [current, setCurrent] = useState(0);
   const [result, setResult] = useState({
     quartz: -1,
     fragment: -1,
@@ -62,7 +64,7 @@ const saintQuartzCalculator = () => {
     const missionAmount = weeklyMission ? weeklyFormula(totalWeek, MISSION_REWARD) : 0;
     
     setResult({
-      quartz: signInAmout + accumulateAmount,
+      quartz: signInAmout + accumulateAmount +current,
       fragment: missionAmount,
       ticket: totalWeek
     })
@@ -99,6 +101,17 @@ const saintQuartzCalculator = () => {
           variant="filled"
         />
       </SimpleGrid>
+
+      <NumberInput
+        value={current}
+        onChange={(v) => {
+          if (typeof v === "number") setCurrent(v);
+        }}
+        label="目前持有數:"
+        mt="md"
+        name="subject"
+        variant="filled"
+      />
 
       <Switch
         checked={dailyCheckIn}

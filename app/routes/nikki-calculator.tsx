@@ -29,6 +29,7 @@ import "../style/Nikki.css";
 const nikkiCalculator = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+  const [current, setCurrent] = useState(0);
   const [result, setResult] = useState(0);
 
   const [gift, setGift] = useState(0);
@@ -112,7 +113,7 @@ const nikkiCalculator = () => {
         checkInPointAmount;
     }
 
-    setResult(result);
+    setResult(result+current);
   };
 
   return (
@@ -146,6 +147,17 @@ const nikkiCalculator = () => {
           variant="filled"
         />
       </SimpleGrid>
+
+      <NumberInput
+        value={current}
+        onChange={(v) => {
+          if (typeof v === "number") setCurrent(v);
+        }}
+        label="目前鑽石數:"
+        mt="md"
+        name="subject"
+        variant="filled"
+      />
 
       <NumberInput
         value={gift}
