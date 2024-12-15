@@ -2,7 +2,6 @@ import { Box, NavLink } from "@mantine/core";
 import { GiCutDiamond } from "react-icons/gi";
 import { SiCrystal } from "react-icons/si";
 
-
 export default function NavBar() {
     return (
         <Box
@@ -12,7 +11,7 @@ export default function NavBar() {
                 mb={"md"}
                 style={{ borderRadius: "0.25rem" }}
                 p="md"
-                href="/nikki-calculator"
+                href="/little-tools/nikki-calculator"
                 active={true}
                 label={"暖暖"}
                 leftSection={<GiCutDiamond size="1rem" />}
@@ -22,7 +21,7 @@ export default function NavBar() {
             <NavLink
                 style={{ borderRadius: "0.25rem" }}
                 p="md"
-                href="/fgo-saint-quartz-calculator"
+                href="/little-tools/fgo-saint-quartz-calculator"
                 active={true}
                 label={"聖晶石"}
                 leftSection={<SiCrystal size="1rem" />}
