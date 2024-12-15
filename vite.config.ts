@@ -9,8 +9,10 @@ declare module "@remix-run/node" {
 }
 
 export default defineConfig({
+  base: '/little-tools/',
   plugins: [
     remix({
+      basename: '/little-tools/',
       ssr: false,
       future: {
         v3_fetcherPersist: true,
