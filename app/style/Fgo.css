@@ -1,9 +1,9 @@
-.mantine-NumberInput-input {
+.fgo .mantine-NumberInput-input {
     color: var(--mantine-color-blue-text);
     background-color: var(--mantine-color-blue-light);
   }
   
-  .mantine-DateInput-input {
+.fgo .mantine-DateInput-input {
     color: var(--mantine-color-blue-text);
     background-color: var(--mantine-color-blue-light);
   }

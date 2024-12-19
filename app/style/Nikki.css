@@ -1,14 +1,14 @@
-.mantine-Select-input {
+.nikki .mantine-Select-input {
   color: var(--mantine-color-pink-text);
   background-color: var(--mantine-color-pink-light);
 }
 
-.mantine-NumberInput-input {
+.nikki .mantine-NumberInput-input {
   color: var(--mantine-color-pink-text);
   background-color: var(--mantine-color-pink-light);
 }
 
-.mantine-DateInput-input {
+.nikki .mantine-DateInput-input {
   color: var(--mantine-color-pink-text);
   background-color: var(--mantine-color-pink-light);
 }

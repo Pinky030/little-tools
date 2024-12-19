@@ -1,15 +1,15 @@
 import {
-  Text,
-  SimpleGrid,
-  Group,
-  Title,
-  Button,
-  Select,
-  NumberInput,
-  Switch,
   Blockquote,
-  Grid,
+  Button,
   Divider,
+  Grid,
+  Group,
+  NumberInput,
+  Select,
+  SimpleGrid,
+  Switch,
+  Title,
+  Text,
 } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
 import dayjs from "dayjs";
@@ -113,11 +113,11 @@ const NikkiCalculator = () => {
         checkInPointAmount;
     }
 
-    setResult(result+current);
+    setResult(result + current);
   };
 
   return (
-    <form>
+    <form className="nikki">
       <Title
         c="pink"
         order={2}
@@ -247,7 +247,6 @@ const NikkiCalculator = () => {
           onClick={() => {
             getResult();
           }}
-          //   type="submit"
           variant="light"
           color="pink"
           radius="md"
@@ -255,7 +254,6 @@ const NikkiCalculator = () => {
           確定
         </Button>
       </Group>
-
 
       {result > 0 && (
         <>

@@ -1,6 +1,10 @@
 import { Image, Stack, Text } from "@mantine/core";
 import type { MetaFunction } from "@remix-run/node";
 import hachiware from "../../public/hachiware.gif";
+import { toolComponents, useToolstargetStore } from "~/store/toolsTarget";
+import NikkiCalculator from "~/components/NikkiCalculator";
+import SaintQuartzCalculator from "~/components/SaintQuartzCalculator";
+import Home from "~/components/Home";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,14 +14,14 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const { currentComponent } = useToolstargetStore((state) => state);
+
   return (
     <main>
-      <Stack h={300} align="stretch" justify="center" gap="md">
-        <Text size="lg" fw={700} c="orange" ta="center">
-          個人用小工具 ʕ•͡ᴥ•ʔ 2
-        </Text>
-        <Image radius="md" h={200} w="auto" fit="contain" src={hachiware} />
-      </Stack>
+     {(currentComponent === toolComponents.home) && <Home />}
+      {(currentComponent === toolComponents.nikki) && <NikkiCalculator />}
+      {(currentComponent === toolComponents.fgo) && <SaintQuartzCalculator />}
+
     </main>
   );
 }

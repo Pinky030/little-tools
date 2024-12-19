@@ -8,7 +8,7 @@ import {
 
 import "@mantine/core/styles.css";
 import '@mantine/dates/styles.css';
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
 import AppLayout from "./components/AppLayout";
 
 export function Layout({ children }: { children: React.ReactNode }) {
