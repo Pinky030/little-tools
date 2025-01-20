@@ -1,7 +1,9 @@
-import { AppShell } from "@mantine/core";
+import { AppShell, Burger, Group, Text } from "@mantine/core";
 import NavBar from "./NavBar";
 import styles from "../style/Background.module.css";
 import { toolComponents, useToolstargetStore } from "~/store/toolsTarget";
+import { useDisclosure } from "@mantine/hooks";
+import { FaStar } from "react-icons/fa6";
 
 // const getColor = (pathname: string) => {
 //   if (pathname === "/") return "#fadfa18a";
@@ -11,6 +13,7 @@ import { toolComponents, useToolstargetStore } from "~/store/toolsTarget";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { currentComponent } = useToolstargetStore((state) => state);
+  const [opened, { toggle, close }] = useDisclosure();
 
   const getColor = (current: toolComponents) => {
     if (current === toolComponents.home) return "#fadfa18a";
@@ -20,13 +23,28 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <AppShell
+      header={{ height: { base: 60, xs: 60, sm: 0, md: 0, lg: 0 } }}
       navbar={{
         width: 300,
         breakpoint: "sm",
-        // collapsed: { mobile: !opened },
+        collapsed: { mobile: !opened },
       }}
       padding="lg"
     >
+      <AppShell.Header>
+        <Group h="100%" px="md">
+          <Burger c={"#818181"} opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          <a href="/" style={{ textDecoration: "none" }}>
+            <Group>
+              <FaStar color={ getColor(currentComponent)}/>
+              <Text fw={500} c="#818181" style={{ letterSpacing: -1 }}>
+                Little tools
+              </Text>
+            </Group>
+          </a>
+        </Group>
+      </AppShell.Header>
+
       <AppShell.Navbar>
         <NavBar />
       </AppShell.Navbar>
